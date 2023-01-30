@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+    <table>
+        <tr>
+            <th>WELCOME HOME PAGE</th>
+        </tr>
+        <tr>
+            <td>NAME:</td>
+            <td>{{user.Name}}</td>
+        </tr>
+        <tr>
+            <td>AGE:</td>
+            <td>{{user.Age}}</td>
+        </tr>
+        <tr>
+            <td>PLACE:</td>
+            <td>{{user.Place}}</td>
+        </tr>
+        <tr>
+            <td>
+                EMAIL:
+            </td>
+            <td>
+                {{user.Email}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="{{user.Photo.url}}" alt="" height="100px" width="100px">
+           </td>
+        </tr>
+        
+         
+    </table>
+
+    <a href="{% url 'app1:changepassword' user.id %}">ChangePassword</a><br>
+
+    <a href="{% url 'app1:logout' %}">Logout</a><br>
+    <a href="{% url 'app1:update' user.id %}">Update</a>
+
+
+
+</body>
+</html>
